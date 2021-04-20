@@ -1,0 +1,68 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="XCenter.master.cs" Inherits="Hamstc.HYSystem.XWeb.XMember.XCenter" %>
+
+<%@ Register src="../UControl/UCMemberCSS.ascx" tagname="UCMemberCSS" tagprefix="uc1" %>
+<%@ Register src="../UControl/UCMemberJS.ascx" tagname="UCMemberJS" tagprefix="uc2" %>
+<%@ Register src="../UControl/UCMemberHeader.ascx" tagname="UCMemberHeader" tagprefix="uc3" %>
+<%@ Register src="../UControl/UCMemberFooter.ascx" tagname="UCMemberFooter" tagprefix="uc4" %>
+
+<!DOCTYPE html>
+<html>
+<head id="Head1" runat="server">
+    <%--字节码--%>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <%--<meta charset="utf-8" />--%>
+    <%--适配移动端访问--%>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <%--IE渲染内核的选择--%>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>个人中心</title>
+    <uc1:UCMemberCSS ID="UCMemberCSS1" runat="server" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="with-nav-bottom with-heading-top">
+    <form id="form1" runat="server">
+    <%-- 头部--%>
+    <uc3:UCMemberHeader ID="UCMemberHeader1" runat="server" NavTitle="个人中心" />
+    <%-- 正文--%>
+    <div style="background:#EA644A;height:200px;padding-top:40px; color:#FFF;font-size:16px;">
+            <div style="text-align:center;">
+                <div class="avatar avatar-xl circle" style="margin-bottom:20px;"><img src="./Res/CSS/imgs/user-face.png" /></div>
+                <br />
+                <div class="rounded">昵称：<asp:Literal ID="litLoginName" runat="server"></asp:Literal> 
+                &nbsp;&nbsp;&nbsp;&nbsp;当前等级：<asp:Literal ID="litGrade" runat="server"></asp:Literal>级</div>
+            </div>
+        </div>
+        <div>
+            <div class="list width=divider">
+            <a class="item">
+                <div class="title">好友人数</div>
+                <span class="label red circle"><%=getFriendCount() %></span>
+            </a>
+            <a class="item" href="./?cmd=member_center_info">
+                <div class="title">个人资料</div>
+                <span class="label" style="background: url(./Res/CSS/Imgs/arr-right-black.png) center center"></span>
+            </a>
+            <a class="item" href="./?cmd=member_center_pwd">
+                <div class="title">修改密码</div>
+                <span class="label" style="background: url(./Res/CSS/Imgs/arr-right-black.png) center center"></span>
+            </a>
+            <a class="item" href="./?cmd=member_center_qa">
+                <div class="title">密保设置</div>
+                <span class="label" style="background: url(./Res/CSS/Imgs/arr-right-black.png) center center"></span>
+            </a>
+            </div>
+        
+        </div>
+    <%-- 底部--%>
+    <uc4:UCMemberFooter ID="UCMemberFooter1" runat="server" />
+   
+    <uc2:UCMemberJS ID="UCMemberJS1" runat="server" />
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

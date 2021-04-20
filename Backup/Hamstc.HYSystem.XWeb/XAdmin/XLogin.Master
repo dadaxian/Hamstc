@@ -1,0 +1,75 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="XLogin.master.cs" Inherits="Hamstc.HYSystem.XWeb.XAdmin.XLogin" %>
+
+<%@ Register src="../UControl/UCAdminCSS.ascx" tagname="UCAdminCSS" tagprefix="uc1" %>
+<%@ Register src="../UControl/UCAdminJS.ascx" tagname="UCAdminJS" tagprefix="uc2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <uc1:UCAdminCSS ID="UCAdminCSS1" runat="server" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="loginbody">
+    <form id="form1" runat="server"> 
+        <div class="login-wrap">      
+          <div class="login-logo" style="">LOGO</div>
+          <div class="login-form">
+            <div class="col">
+              <asp:TextBox ID="txtUserName" runat="server" CssClass="login-input" placeholder="请输入用户名" title="请输入用户名"></asp:TextBox>
+              <label class="icon user" for="txtUserName"></label>
+            </div>
+            <div class="col">
+              <asp:TextBox ID="txtPassword" runat="server" CssClass="login-input" TextMode="Password" placeholder="请输入密码" title="请输入密码"></asp:TextBox>
+              <label class="icon pwd" for="txtPassword"></label>
+            </div>  
+            <div class="col">
+               <table>
+                <tr>
+                    <td>
+                    <asp:TextBox ID="txtYZM" runat="server" CssClass="login-input" style="width:100px" Text="" placeholder="请输入验证码" title="请输入验证码"></asp:TextBox>          
+                    <label class="icon pwd" for="txtYZM"></label>   
+                    </td>
+                    <td>&nbsp;&nbsp;
+                    <img alt="验证码" title="点击重新获取验证码" border="0" src="./XAPI/VCode.aspx" 
+                        style="cursor:pointer;" onclick="this.src='./XAPI/VCode.aspx?t='+new Date().getSeconds()" />
+                    </td>
+                </tr>
+               </table>                 
+            </div>       
+            <div class="col">
+              <asp:Button ID="btnSubmit" runat="server" Text="登 录" CssClass="login-btn" onclick="BtnSubmit_Click" />
+            </div>
+          </div>
+          <div class="login-tips"><i></i><p id="msgtip" runat="server" style="padding-top:13px;">请输入用户名和密码</p></div>
+        </div>
+        <div class="copy-right">
+            <p>版权所有 Copyright © 2017  All Rights Reserved.</p>        
+        </div>
+        <asp:Panel ID="Panel1" runat="server" Visible="false" style=" position:fixed;width:100%;padding:10px;background:#F00; color:#FFF;">
+             <asp:Literal ID="lit4Tip" runat="server"></asp:Literal>
+        </asp:Panel> 
+        <uc2:UCAdminJS ID="UCAdminJS1" runat="server" />    
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+            </asp:ContentPlaceHolder>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                //检测IE
+                if ('undefined' == typeof (document.body.style.maxHeight)) {
+                    window.location.href = './_ie6update.html';
+                }
+                //检测是否被嵌套
+                if (window.top.location != window.self.location) {
+                    window.top.location = window.self.location
+                }
+            });
+        </script>
+    </form>
+</body>
+</html>

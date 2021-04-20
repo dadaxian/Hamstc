@@ -1,0 +1,121 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="XNoticeList.master.cs" Inherits="Hamstc.HYSystem.XWeb.XAdmin.XNoticeList" %>
+
+<%@ Register src="../UControl/UCAdminCSS.ascx" tagname="UCAdminCSS" tagprefix="uc1" %>
+<%@ Register src="../UControl/UCAdminJS.ascx" tagname="UCAdminJS" tagprefix="uc2" %>
+
+<!DOCTYPE html>
+
+<html>
+<head id="Head1" runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <uc1:UCAdminCSS ID="UCAdminCSS1" runat="server" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="mainbody">
+    <form id="form1" runat="server">
+    <!--导航栏-->
+    <div class="location">  
+      <a class='home'><i></i><span>管理中心</span></a>  
+      <i class='arrow'></i>
+      <span>公告管理</span>
+      <i class='arrow'></i>
+      <span>列表</span>
+    </div>
+    <!--/导航栏-->
+    <!--工具栏-->
+    <div id="floatHead" class="toolbar-wrap">
+        <div class="toolbar">
+            <div class="box-wrap"> 
+                <div class="l-list">
+                    <ul class="icon-list">
+                        <li>
+                            <asp:LinkButton ID="btnAdd"  CssClass="add" runat="server"  onclick="btnAdd_Click"><i></i><span>新增</span></asp:LinkButton>
+                        </li>
+                        <li><a class="all" href="javascript:;" onclick="checkAll(this);"><i></i><span>全选</span></a></li>
+                        <li>
+                           <asp:LinkButton ID="btnDelete" runat="server" CssClass="del" 
+                                OnClientClick="return ExePostBack('ctl00$btnDelete');" 
+                                onclick="btnDelete_Click"><i></i><span>删除</span></asp:LinkButton>
+                        </li>
+                    </ul>
+                    <div class="menu-list"></div>
+                </div>
+                <div class="r-list">
+                    <asp:TextBox ID="txtKeywords" runat="server" CssClass="keyword" placeholder="标题"/>
+                    <asp:LinkButton ID="lbtnSearch" runat="server" CssClass="btn-search" 
+                            onclick="lbtnSearch_Click">查询</asp:LinkButton> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/工具栏-->
+    <!--列表-->
+    <div class="table-container">
+        <!--文字列表-->
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="ltable">
+        <tr>
+          <th width="40">选择</th>  
+          <th align="left">标题</th>  
+          <th align="left">内容</th>   
+          <th align="left" width="120">发布时间</th>   
+          <th align="left" width="100">操作</th>
+        </tr>
+      <asp:Repeater ID="rptList1" runat="server" onitemcommand="rptList_ItemCommand" 
+              onitemdatabound="rptList1_ItemDataBound">    
+      <ItemTemplate>
+        <tr>
+          <td align="center">
+                <asp:CheckBox ID="chkId" CssClass="checkall" runat="server" style="vertical-align:middle;" />
+                <asp:HiddenField ID="hidId" Value='<%#Eval("NID")%>' runat="server" />
+          </td> 
+          <td><%#Eval("Title")%></td> 
+          <td><%#Eval("Info").ToString().Length > 100 ? (Eval("Info").ToString().Substring(0,100)+"...") : Eval("Info").ToString()%></td> 
+          <td><%#Eval("UpdateTime","{0:yyyy-MM-dd}")%></td> 
+          <td>
+                <asp:LinkButton ID="lbtnEdit" CommandName="lbtnEdit" CommandArgument='<%#Eval("NID")%>' runat="server" Text="[编辑]"/>  
+          </td> 
+        </tr>
+      </ItemTemplate>
+      <FooterTemplate>
+      <%#rptList1.Items.Count == 0 ? "<tr><td align=\"center\" colspan=\"11\">暂无记录</td></tr>" : ""%>      
+      </FooterTemplate>
+      </asp:Repeater>
+      </table>
+      <!--/文字列表--> 
+
+    </div>
+    <!--/列表-->
+    <!--内容底部-->
+    <div class="line20"></div>
+    <div class="pagelist">
+      <div class="l-btns">
+        <span>显示</span><asp:TextBox ID="txtPageNum" runat="server" CssClass="pagenum" onkeydown="return checkNumber(event);"
+                    OnTextChanged="txtPageNum_TextChanged" AutoPostBack="True"></asp:TextBox><span>条/页</span>
+      </div>
+      <div class="l-btns">
+        <span>共计</span><asp:TextBox ID="txtTotal" runat="server" CssClass="pagenum" ReadOnly="true"></asp:TextBox><span>条</span>
+      </div>
+      <div id="PageContent" runat="server" class="default">          
+          <asp:Repeater ID="rptPage" runat="server" onitemcommand="rptPage_ItemCommand" 
+              onitemdatabound="rptPage_ItemDataBound">
+            <ItemTemplate>                
+                <asp:HiddenField ID="hidPage" runat="server" Value='<%#Eval("Selected") %>' />
+                <asp:Label ID="labPage" runat="server" CssClass="current" Text='<%#Eval("Index") %>'></asp:Label>
+                <asp:LinkButton ID="lbtnPage" runat="server" CommandName="lbtnPage" CommandArgument='<%#Eval("Index") %>'><%#Eval("Index") %></asp:LinkButton>
+            </ItemTemplate>
+          </asp:Repeater>
+      </div>
+    </div>
+    <!--/内容底部-->  
+
+    <uc2:UCAdminJS ID="UCAdminJS1" runat="server" />    
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

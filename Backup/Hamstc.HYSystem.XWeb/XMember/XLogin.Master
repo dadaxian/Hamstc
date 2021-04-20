@@ -1,0 +1,74 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="XLogin.master.cs" Inherits="Hamstc.HYSystem.XWeb.XMember.XLogin" %>
+
+<%@ Register src="../UControl/UCMemberCSS.ascx" tagname="UCMemberCSS" tagprefix="uc1" %>
+<%@ Register src="../UControl/UCMemberJS.ascx" tagname="UCMemberJS" tagprefix="uc2" %>
+
+<!DOCTYPE html>
+<html>
+<head id="Head1" runat="server">
+    <%--字节码--%>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <%--<meta charset="utf-8" />--%>
+    <%--适配移动端访问--%>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <%--IE渲染内核的选择--%>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login</title>
+    <uc1:UCMemberCSS ID="UCMemberCSS1" runat="server" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="with-nav-bottom with-heading-top">
+    <form id="form1" runat="server">
+    <div style="position:absolute;top:0px;left:0px; right:0px;"> 
+        <asp:PlaceHolder ID="phMsg" runat="server" Visible="false">
+            <div class='layer has-margin has-padding red'><i class='icon-times'></i><asp:Literal ID="litMsg" runat="server"></asp:Literal></div>
+        </asp:PlaceHolder>
+        <div style="background:#EA644A;text-align:center;padding:30px;">
+            <img src="./Res/CSS/imgs/user-face.png" />
+        </div>
+        <div style="padding:20px;"><%--内边距 20px--%>
+        <div class="control">
+            <asp:TextBox ID="username" runat="server" CssClass="input" placeholder="昵称" style="line-height:30px;"></asp:TextBox> 
+        </div>
+        <div class="control" style="margin-top:20px;margin-bottom:20px;"><%--外边距 20px--%>
+            <asp:TextBox ID="password" runat="server" CssClass="input" placeholder="密码" TextMode="Password" style="line-height:30px;"></asp:TextBox>  
+        </div>
+        <table style="width:100%;">
+            <tr>
+                <td valign="top">
+                    <div class="control">
+                        <asp:TextBox ID="vcode" runat="server" CssClass="input" placeholder="验证码" style="line-height:30px;"></asp:TextBox>                         
+                    </div>
+                </td>
+                <td width="100px;">
+                    <img alt="验证码" title="点击重新获取验证码" border="0" src="./XAPI/VCode.aspx"
+                         style="cursor:pointer;height:38px;" onclick="this.src='./XAPI/VCode.aspx?t='+new Date().getSeconds()" />
+                </td>
+            </tr>
+        </table> 
+        <div class="control" style="text-align:center;">
+            <asp:Button ID="Button1" runat="server" Text="立即登录" CssClass="btn red" 
+                Width="100%" onclick="Button1_Click"  /> 
+        </div>  
+        <div style=" position:absolute;bottom:-20px;right:0;">
+            <a href="./?cmd=member_forget" class="label special-pale">忘记密码?</a> 
+        </div>
+        </div>  
+    </div>    
+     
+    <uc2:UCMemberJS ID="UCMemberJS1" runat="server" />
+    <script type="text/javascript">
+        //检测是否被嵌套
+        if (window.top.location != window.self.location) {
+            window.top.location = window.self.location
+        }
+    </script>
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div> 
+    </form>
+</body>
+</html>

@@ -1,0 +1,876 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DF8957E4-48BF-4AD2-85F6-6B89C2FD851B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hamstc.HYSystem.XWeb</RootNamespace>
+    <AssemblyName>Hamstc.HYSystem.XWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="Res\CSS\base.css" />
+    <Content Include="Res\CSS\bootstrap.css" />
+    <Content Include="Res\CSS\bootstrap.min.css" />
+    <Content Include="Res\CSS\edit.css" />
+    <Content Include="Res\CSS\imgs\arr-left-white.png" />
+    <Content Include="Res\CSS\imgs\arr-right-black.png" />
+    <Content Include="Res\CSS\imgs\btn-dqje.png" />
+    <Content Include="Res\CSS\imgs\btn-dqsy.png" />
+    <Content Include="Res\CSS\imgs\btn-ewm.png" />
+    <Content Include="Res\CSS\imgs\btn-jjmx.png" />
+    <Content Include="Res\CSS\imgs\btn-out.png" />
+    <Content Include="Res\CSS\imgs\btn-slqr.png" />
+    <Content Include="Res\CSS\imgs\btn-slsj.png" />
+    <Content Include="Res\CSS\imgs\btn-tcxt.png" />
+    <Content Include="Res\CSS\imgs\btn-tzgg.png" />
+    <Content Include="Res\CSS\imgs\btn-wdtd.png" />
+    <Content Include="Res\CSS\imgs\btn-zchy.png" />
+    <Content Include="Res\CSS\imgs\deng-green.png" />
+    <Content Include="Res\CSS\imgs\deng-red.png" />
+    <Content Include="Res\CSS\imgs\deng-yellow.png" />
+    <Content Include="Res\CSS\imgs\favicon.ico" />
+    <Content Include="Res\CSS\imgs\favicon1.ico" />
+    <Content Include="Res\CSS\imgs\icon-48-b.ico" />
+    <Content Include="Res\CSS\imgs\icon-tip-yellow.png" />
+    <Content Include="Res\CSS\imgs\icon48.ico" />
+    <Content Include="Res\CSS\imgs\icon64.ico" />
+    <Content Include="Res\CSS\imgs\icon_onload.gif" />
+    <Content Include="Res\CSS\imgs\ie_update.jpg" />
+    <Content Include="Res\CSS\imgs\image1.gif" />
+    <Content Include="Res\CSS\imgs\image2.gif" />
+    <Content Include="Res\CSS\imgs\jcrop.gif" />
+    <Content Include="Res\CSS\imgs\loadimg.gif" />
+    <Content Include="Res\CSS\imgs\login-bg.jpg" />
+    <Content Include="Res\CSS\imgs\logo-b.png" />
+    <Content Include="Res\CSS\imgs\logo.png" />
+    <Content Include="Res\CSS\imgs\logo2.png" />
+    <Content Include="Res\CSS\imgs\logo_ico.png" />
+    <Content Include="Res\CSS\imgs\main-home.jpg" />
+    <Content Include="Res\CSS\imgs\meneame.jpg" />
+    <Content Include="Res\CSS\imgs\nav\home.png" />
+    <Content Include="Res\CSS\imgs\nav\order.png" />
+    <Content Include="Res\CSS\imgs\nav\pus.png" />
+    <Content Include="Res\CSS\imgs\nav\sys.png" />
+    <Content Include="Res\CSS\imgs\nav\tree_jia.png" />
+    <Content Include="Res\CSS\imgs\nav\tree_jian.png" />
+    <Content Include="Res\CSS\imgs\nav\user.png" />
+    <Content Include="Res\CSS\imgs\order_speed.gif" />
+    <Content Include="Res\CSS\imgs\skin_icons.png" />
+    <Content Include="Res\CSS\imgs\user-face.png" />
+    <Content Include="Res\CSS\imgs\valid_icons.png" />
+    <Content Include="Res\CSS\imgs\wxcode.png" />
+    <Content Include="Res\CSS\imgs\wxmba.png" />
+    <Content Include="Res\CSS\imgs\wxmbq.png" />
+    <Content Include="Res\CSS\imgs\wxname.png" />
+    <Content Include="Res\CSS\imgs\wxphone.png" />
+    <Content Include="Res\CSS\imgs\xloading.gif" />
+    <Content Include="Res\CSS\layout.css" />
+    <Content Include="Res\CSS\pagination.css" />
+    <Content Include="Res\CSS\style.css" />
+    <Content Include="Res\CSS\ui-tree-style.css" />
+    <Content Include="Res\JS\adminjs.js" />
+    <Content Include="Res\JS\artdialog\dialog-min.js" />
+    <Content Include="Res\JS\artdialog\dialog-plus-min.js" />
+    <Content Include="Res\JS\artdialog\ui-dialog.css" />
+    <Content Include="Res\JS\common.js" />
+    <Content Include="Res\JS\datepicker\calendar.js" />
+    <Content Include="Res\JS\datepicker\lang\en.js" />
+    <Content Include="Res\JS\datepicker\lang\zh-cn.js" />
+    <Content Include="Res\JS\datepicker\lang\zh-tw.js" />
+    <Content Include="Res\JS\datepicker\skin\datePicker.gif" />
+    <Content Include="Res\JS\datepicker\skin\default\datepicker.css" />
+    <Content Include="Res\JS\datepicker\skin\default\img.gif" />
+    <Content Include="Res\JS\datepicker\skin\WdatePicker.css" />
+    <Content Include="Res\JS\datepicker\skin\whyGreen\bg.jpg" />
+    <Content Include="Res\JS\datepicker\skin\whyGreen\datepicker.css" />
+    <Content Include="Res\JS\datepicker\skin\whyGreen\img.gif" />
+    <Content Include="Res\JS\datepicker\WdatePicker.js" />
+    <Content Include="Res\JS\editor\kindeditor-min.js" />
+    <Content Include="Res\JS\editor\kindeditor.js" />
+    <Content Include="Res\JS\editor\lang\ar.js" />
+    <Content Include="Res\JS\editor\lang\en.js" />
+    <Content Include="Res\JS\editor\lang\ko.js" />
+    <Content Include="Res\JS\editor\lang\ru.js" />
+    <Content Include="Res\JS\editor\lang\zh-CN.js" />
+    <Content Include="Res\JS\editor\lang\zh-TW.js" />
+    <Content Include="Res\JS\editor\plugins\anchor\anchor.js" />
+    <Content Include="Res\JS\editor\plugins\autoheight\autoheight.js" />
+    <Content Include="Res\JS\editor\plugins\baidumap\baidumap.js" />
+    <Content Include="Res\JS\editor\plugins\baidumap\index.html" />
+    <Content Include="Res\JS\editor\plugins\baidumap\map.html" />
+    <Content Include="Res\JS\editor\plugins\clearhtml\clearhtml.js" />
+    <Content Include="Res\JS\editor\plugins\code\code.js" />
+    <Content Include="Res\JS\editor\plugins\code\prettify.css" />
+    <Content Include="Res\JS\editor\plugins\code\prettify.js" />
+    <Content Include="Res\JS\editor\plugins\emoticons\emoticons.js" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\0.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\1.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\10.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\100.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\101.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\102.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\103.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\104.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\105.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\106.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\107.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\108.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\109.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\11.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\110.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\111.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\112.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\113.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\114.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\115.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\116.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\117.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\118.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\119.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\12.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\120.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\121.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\122.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\123.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\124.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\125.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\126.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\127.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\128.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\129.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\13.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\130.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\131.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\132.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\133.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\134.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\14.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\15.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\16.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\17.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\18.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\19.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\2.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\20.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\21.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\22.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\23.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\24.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\25.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\26.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\27.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\28.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\29.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\3.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\30.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\31.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\32.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\33.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\34.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\35.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\36.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\37.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\38.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\39.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\4.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\40.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\41.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\42.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\43.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\44.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\45.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\46.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\47.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\48.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\49.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\5.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\50.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\51.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\52.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\53.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\54.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\55.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\56.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\57.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\58.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\59.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\6.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\60.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\61.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\62.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\63.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\64.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\65.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\66.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\67.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\68.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\69.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\7.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\70.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\71.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\72.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\73.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\74.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\75.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\76.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\77.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\78.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\79.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\8.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\80.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\81.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\82.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\83.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\84.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\85.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\86.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\87.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\88.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\89.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\9.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\90.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\91.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\92.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\93.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\94.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\95.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\96.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\97.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\98.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\99.gif" />
+    <Content Include="Res\JS\editor\plugins\emoticons\images\static.gif" />
+    <Content Include="Res\JS\editor\plugins\filemanager\filemanager.js" />
+    <Content Include="Res\JS\editor\plugins\filemanager\images\file-16.gif" />
+    <Content Include="Res\JS\editor\plugins\filemanager\images\file-64.gif" />
+    <Content Include="Res\JS\editor\plugins\filemanager\images\folder-16.gif" />
+    <Content Include="Res\JS\editor\plugins\filemanager\images\folder-64.gif" />
+    <Content Include="Res\JS\editor\plugins\filemanager\images\go-up.gif" />
+    <Content Include="Res\JS\editor\plugins\fixtoolbar\fixtoolbar.js" />
+    <Content Include="Res\JS\editor\plugins\flash\flash.js" />
+    <Content Include="Res\JS\editor\plugins\image\image.js" />
+    <Content Include="Res\JS\editor\plugins\image\images\align_left.gif" />
+    <Content Include="Res\JS\editor\plugins\image\images\align_right.gif" />
+    <Content Include="Res\JS\editor\plugins\image\images\align_top.gif" />
+    <Content Include="Res\JS\editor\plugins\image\images\refresh.png" />
+    <Content Include="Res\JS\editor\plugins\insertfile\insertfile.js" />
+    <Content Include="Res\JS\editor\plugins\lineheight\lineheight.js" />
+    <Content Include="Res\JS\editor\plugins\link\link.js" />
+    <Content Include="Res\JS\editor\plugins\map\map.html" />
+    <Content Include="Res\JS\editor\plugins\map\map.js" />
+    <Content Include="Res\JS\editor\plugins\media\media.js" />
+    <Content Include="Res\JS\editor\plugins\multiimage\images\image.png" />
+    <Content Include="Res\JS\editor\plugins\multiimage\images\select-files-en.png" />
+    <Content Include="Res\JS\editor\plugins\multiimage\images\select-files-zh-CN.png" />
+    <Content Include="Res\JS\editor\plugins\multiimage\images\swfupload.swf" />
+    <Content Include="Res\JS\editor\plugins\multiimage\multiimage.js" />
+    <Content Include="Res\JS\editor\plugins\pagebreak\pagebreak.js" />
+    <Content Include="Res\JS\editor\plugins\plainpaste\plainpaste.js" />
+    <Content Include="Res\JS\editor\plugins\preview\preview.js" />
+    <Content Include="Res\JS\editor\plugins\quickformat\quickformat.js" />
+    <Content Include="Res\JS\editor\plugins\table\table.js" />
+    <Content Include="Res\JS\editor\plugins\template\html\1.htm" />
+    <Content Include="Res\JS\editor\plugins\template\html\2.htm" />
+    <Content Include="Res\JS\editor\plugins\template\html\3.htm" />
+    <Content Include="Res\JS\editor\plugins\template\html\4.htm" />
+    <Content Include="Res\JS\editor\plugins\template\template.js" />
+    <Content Include="Res\JS\editor\plugins\wordpaste\wordpaste.js" />
+    <Content Include="Res\JS\editor\themes\common\anchor.gif" />
+    <Content Include="Res\JS\editor\themes\common\blank.gif" />
+    <Content Include="Res\JS\editor\themes\common\flash.gif" />
+    <Content Include="Res\JS\editor\themes\common\loading.gif" />
+    <Content Include="Res\JS\editor\themes\common\media.gif" />
+    <Content Include="Res\JS\editor\themes\common\rm.gif" />
+    <Content Include="Res\JS\editor\themes\default\background.png" />
+    <Content Include="Res\JS\editor\themes\default\default.css" />
+    <Content Include="Res\JS\editor\themes\default\default.png" />
+    <Content Include="Res\JS\editor\themes\qq\editor.gif" />
+    <Content Include="Res\JS\editor\themes\qq\qq.css" />
+    <Content Include="Res\JS\editor\themes\simple\simple.css" />
+    <Content Include="Res\JS\jquery\jquery-1.11.2.min.js" />
+    <Content Include="Res\JS\jquery\jquery.form.min.js" />
+    <Content Include="Res\JS\jquery\jquery.jcrop.min.js" />
+    <Content Include="Res\JS\jquery\jquery.jqzoom.js" />
+    <Content Include="Res\JS\jquery\jquery.lazyload.min.js" />
+    <Content Include="Res\JS\jquery\jquery.min.js" />
+    <Content Include="Res\JS\jquery\jquery.nicescroll.js" />
+    <Content Include="Res\JS\jquery\jquery.pagination.js" />
+    <Content Include="Res\JS\jquery\jquery.qrcode.min.js" />
+    <Content Include="Res\JS\jquery\PCASClass.js" />
+    <Content Include="Res\JS\jquery\Validform_v5.3.2_min.js" />
+    <Content Include="Res\JS\layindex.js" />
+    <Content Include="Res\JS\laymain.js" />
+    <Content Include="Res\JS\uploader.js" />
+    <Content Include="Res\JS\webuploader\uploader.swf" />
+    <Content Include="Res\JS\webuploader\webuploader.min.js" />
+    <Content Include="Res\MZUI\css\mzui.css" />
+    <Content Include="Res\MZUI\css\mzui.min.css" />
+    <Content Include="Res\MZUI\js\mzui.js" />
+    <Content Include="Res\MZUI\js\mzui.min.js" />
+    <Content Include="Res\MZUI\lib\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Res\ZUI\css\zui-theme.css" />
+    <Content Include="Res\ZUI\css\zui-theme.min.css" />
+    <Content Include="Res\ZUI\css\zui.css" />
+    <Content Include="Res\ZUI\css\zui.lite.css" />
+    <Content Include="Res\ZUI\css\zui.lite.min.css" />
+    <Content Include="Res\ZUI\css\zui.min.css" />
+    <Content Include="Res\ZUI\js\zui.js" />
+    <Content Include="Res\ZUI\js\zui.lite.js" />
+    <Content Include="Res\ZUI\js\zui.lite.min.js" />
+    <Content Include="Res\ZUI\js\zui.min.js" />
+    <Content Include="Res\ZUI\lib\array\zui.array.js" />
+    <Content Include="Res\ZUI\lib\array\zui.array.min.js" />
+    <Content Include="Res\ZUI\lib\board\zui.board.css" />
+    <Content Include="Res\ZUI\lib\board\zui.board.js" />
+    <Content Include="Res\ZUI\lib\board\zui.board.min.css" />
+    <Content Include="Res\ZUI\lib\board\zui.board.min.js" />
+    <Content Include="Res\ZUI\lib\bootbox\bootbox.css" />
+    <Content Include="Res\ZUI\lib\bootbox\bootbox.js" />
+    <Content Include="Res\ZUI\lib\bootbox\bootbox.min.css" />
+    <Content Include="Res\ZUI\lib\bootbox\bootbox.min.js" />
+    <Content Include="Res\ZUI\lib\calendar\zui.calendar.css" />
+    <Content Include="Res\ZUI\lib\calendar\zui.calendar.js" />
+    <Content Include="Res\ZUI\lib\calendar\zui.calendar.min.css" />
+    <Content Include="Res\ZUI\lib\calendar\zui.calendar.min.js" />
+    <Content Include="Res\ZUI\lib\chart\zui.chart.js" />
+    <Content Include="Res\ZUI\lib\chart\zui.chart.min.js" />
+    <Content Include="Res\ZUI\lib\chosenicons\zui.chosenicons.css" />
+    <Content Include="Res\ZUI\lib\chosenicons\zui.chosenicons.js" />
+    <Content Include="Res\ZUI\lib\chosenicons\zui.chosenicons.min.css" />
+    <Content Include="Res\ZUI\lib\chosenicons\zui.chosenicons.min.js" />
+    <Content Include="Res\ZUI\lib\chosen\chosen.css" />
+    <Content Include="Res\ZUI\lib\chosen\chosen.js" />
+    <Content Include="Res\ZUI\lib\chosen\chosen.min.css" />
+    <Content Include="Res\ZUI\lib\chosen\chosen.min.js" />
+    <Content Include="Res\ZUI\lib\clipboard\clipboard.js" />
+    <Content Include="Res\ZUI\lib\clipboard\clipboard.min.js" />
+    <Content Include="Res\ZUI\lib\colorpicker\zui.colorpicker.css" />
+    <Content Include="Res\ZUI\lib\colorpicker\zui.colorpicker.js" />
+    <Content Include="Res\ZUI\lib\colorpicker\zui.colorpicker.min.css" />
+    <Content Include="Res\ZUI\lib\colorpicker\zui.colorpicker.min.js" />
+    <Content Include="Res\ZUI\lib\colorset.js\zui.colorset.js" />
+    <Content Include="Res\ZUI\lib\colorset.js\zui.colorset.min.js" />
+    <Content Include="Res\ZUI\lib\dashboard\zui.dashboard.css" />
+    <Content Include="Res\ZUI\lib\dashboard\zui.dashboard.js" />
+    <Content Include="Res\ZUI\lib\dashboard\zui.dashboard.min.css" />
+    <Content Include="Res\ZUI\lib\dashboard\zui.dashboard.min.js" />
+    <Content Include="Res\ZUI\lib\datagrid\zui.datagrid.css" />
+    <Content Include="Res\ZUI\lib\datagrid\zui.datagrid.js" />
+    <Content Include="Res\ZUI\lib\datagrid\zui.datagrid.min.css" />
+    <Content Include="Res\ZUI\lib\datagrid\zui.datagrid.min.js" />
+    <Content Include="Res\ZUI\lib\datatable\zui.datatable.css" />
+    <Content Include="Res\ZUI\lib\datatable\zui.datatable.js" />
+    <Content Include="Res\ZUI\lib\datatable\zui.datatable.min.css" />
+    <Content Include="Res\ZUI\lib\datatable\zui.datatable.min.js" />
+    <Content Include="Res\ZUI\lib\datetimepicker\datetimepicker.css" />
+    <Content Include="Res\ZUI\lib\datetimepicker\datetimepicker.js" />
+    <Content Include="Res\ZUI\lib\datetimepicker\datetimepicker.min.css" />
+    <Content Include="Res\ZUI\lib\datetimepicker\datetimepicker.min.js" />
+    <Content Include="Res\ZUI\lib\hotkey\hotkey.js" />
+    <Content Include="Res\ZUI\lib\hotkey\hotkey.min.js" />
+    <Content Include="Res\ZUI\lib\ieonly\excanvas.js" />
+    <Content Include="Res\ZUI\lib\ieonly\html5shiv.js" />
+    <Content Include="Res\ZUI\lib\ieonly\respond.js" />
+    <Content Include="Res\ZUI\lib\imgcutter\zui.imgcutter.css" />
+    <Content Include="Res\ZUI\lib\imgcutter\zui.imgcutter.js" />
+    <Content Include="Res\ZUI\lib\imgcutter\zui.imgcutter.min.css" />
+    <Content Include="Res\ZUI\lib\imgcutter\zui.imgcutter.min.js" />
+    <Content Include="Res\ZUI\lib\imgready\imgready.js" />
+    <Content Include="Res\ZUI\lib\imgready\imgready.min.js" />
+    <Content Include="Res\ZUI\lib\jquery\jquery.js" />
+    <Content Include="Res\ZUI\lib\kindeditor\kindeditor.css" />
+    <Content Include="Res\ZUI\lib\kindeditor\kindeditor.js" />
+    <Content Include="Res\ZUI\lib\kindeditor\kindeditor.min.css" />
+    <Content Include="Res\ZUI\lib\kindeditor\kindeditor.min.js" />
+    <Content Include="Res\ZUI\lib\kindeditor\lang\en.js" />
+    <Content Include="Res\ZUI\lib\kindeditor\lang\zh_CN.js" />
+    <Content Include="Res\ZUI\lib\kindeditor\lang\zh_TW.js" />
+    <Content Include="Res\ZUI\lib\kindeditor\themes\default\default.png" />
+    <Content Include="Res\ZUI\lib\migrate1.2\zui.migrate1.2.js" />
+    <Content Include="Res\ZUI\lib\migrate1.2\zui.migrate1.2.min.js" />
+    <Content Include="Res\ZUI\lib\prettify\lang-apollo.js" />
+    <Content Include="Res\ZUI\lib\prettify\lang-basic.js" />
+    <Content Include="Res\ZUI\lib\prettify\lang-clj.js" />
+    <Content Include="Res\ZUI\lib\prettify\lang-css.js" />
+    <Content Include="Res\ZUI\lib\prettify\lang-dart.js" />
+    <Content Include="Res\ZUI\lib\prettify\lang-erlang.js" />
+    <Content Include="Res\ZUI\lib\prettify\lang-go.js" />
+    <Content Include="Res\ZUI\lib\prettify\lang-hs.js" />
+    <Content Include="Res\ZUI\lib\prettify\lang-lisp.js" />
+    <Content Include="Res\ZUI\lib\prettify\lang-llvm.js" />
+    <Content Include="Res\ZUI\lib\prettify\lang-lua.js" />
+    <Content Include="Res\ZUI\lib\prettify\lang-matlab.js" />
+    <Content Include="Res\ZUI\lib\prettify\lang-ml.js" />
+    <Content Include="Res\ZUI\lib\prettify\lang-mumps.js" />
+    <Content Include="Res\ZUI\lib\prettify\lang-n.js" />
+    <Content Include="Res\ZUI\lib\prettify\lang-pascal.js" />
+    <Content Include="Res\ZUI\lib\prettify\lang-proto.js" />
+    <Content Include="Res\ZUI\lib\prettify\lang-r.js" />
+    <Content Include="Res\ZUI\lib\prettify\lang-rd.js" />
+    <Content Include="Res\ZUI\lib\prettify\lang-scala.js" />
+    <Content Include="Res\ZUI\lib\prettify\lang-sql.js" />
+    <Content Include="Res\ZUI\lib\prettify\lang-tcl.js" />
+    <Content Include="Res\ZUI\lib\prettify\lang-tex.js" />
+    <Content Include="Res\ZUI\lib\prettify\lang-vb.js" />
+    <Content Include="Res\ZUI\lib\prettify\lang-vhdl.js" />
+    <Content Include="Res\ZUI\lib\prettify\lang-wiki.js" />
+    <Content Include="Res\ZUI\lib\prettify\lang-xq.js" />
+    <Content Include="Res\ZUI\lib\prettify\lang-yaml.js" />
+    <Content Include="Res\ZUI\lib\prettify\prettify.css" />
+    <Content Include="Res\ZUI\lib\prettify\prettify.js" />
+    <Content Include="Res\ZUI\lib\prettify\run_prettify.js" />
+    <Content Include="Res\ZUI\lib\selectable\zui.selectable.js" />
+    <Content Include="Res\ZUI\lib\selectable\zui.selectable.min.js" />
+    <Content Include="Res\ZUI\lib\sortable\zui.sortable.js" />
+    <Content Include="Res\ZUI\lib\sortable\zui.sortable.min.js" />
+    <Content Include="Res\ZUI\lib\tabs\zui.tabs.css" />
+    <Content Include="Res\ZUI\lib\tabs\zui.tabs.js" />
+    <Content Include="Res\ZUI\lib\tabs\zui.tabs.min.css" />
+    <Content Include="Res\ZUI\lib\tabs\zui.tabs.min.js" />
+    <Content Include="Res\ZUI\lib\treemap\zui.treemap.css" />
+    <Content Include="Res\ZUI\lib\treemap\zui.treemap.js" />
+    <Content Include="Res\ZUI\lib\treemap\zui.treemap.min.css" />
+    <Content Include="Res\ZUI\lib\treemap\zui.treemap.min.js" />
+    <Content Include="Res\ZUI\lib\ueditor\ueditor.css" />
+    <Content Include="Res\ZUI\lib\ueditor\ueditor.min.css" />
+    <Content Include="Res\ZUI\lib\uploader\Moxie.swf" />
+    <Content Include="Res\ZUI\lib\uploader\Moxie.xap" />
+    <Content Include="Res\ZUI\lib\uploader\zui.uploader.css" />
+    <Content Include="Res\ZUI\lib\uploader\zui.uploader.js" />
+    <Content Include="Res\ZUI\lib\uploader\zui.uploader.min.css" />
+    <Content Include="Res\ZUI\lib\uploader\zui.uploader.min.js" />
+    <Content Include="UControl\UCAdminCSS.ascx" />
+    <Content Include="UControl\UCAdminJS.ascx" />
+    <Content Include="UControl\UCMemberCSS.ascx" />
+    <Content Include="UControl\UCMemberFooter.ascx" />
+    <Content Include="UControl\UCMemberHeader.ascx" />
+    <Content Include="UControl\UCMemberJS.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="_ie6update.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UControl\UCAdminCSS.ascx.cs">
+      <DependentUpon>UCAdminCSS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UControl\UCAdminCSS.ascx.designer.cs">
+      <DependentUpon>UCAdminCSS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UControl\UCAdminJS.ascx.cs">
+      <DependentUpon>UCAdminJS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UControl\UCAdminJS.ascx.designer.cs">
+      <DependentUpon>UCAdminJS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UControl\UCMemberCSS.ascx.cs">
+      <DependentUpon>UCMemberCSS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UControl\UCMemberCSS.ascx.designer.cs">
+      <DependentUpon>UCMemberCSS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UControl\UCMemberFooter.ascx.cs">
+      <DependentUpon>UCMemberFooter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UControl\UCMemberFooter.ascx.designer.cs">
+      <DependentUpon>UCMemberFooter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UControl\UCMemberHeader.ascx.cs">
+      <DependentUpon>UCMemberHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UControl\UCMemberHeader.ascx.designer.cs">
+      <DependentUpon>UCMemberHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UControl\UCMemberJS.ascx.cs">
+      <DependentUpon>UCMemberJS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UControl\UCMemberJS.ascx.designer.cs">
+      <DependentUpon>UCMemberJS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="XAdmin\XChangePWD.Master.cs">
+      <DependentUpon>XChangePWD.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XAdmin\XChangePWD.Master.designer.cs">
+      <DependentUpon>XChangePWD.Master</DependentUpon>
+    </Compile>
+    <Compile Include="XAdmin\XExit.Master.cs">
+      <DependentUpon>XExit.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XAdmin\XExit.Master.designer.cs">
+      <DependentUpon>XExit.Master</DependentUpon>
+    </Compile>
+    <Compile Include="XAdmin\XFeedbackList.Master.cs">
+      <DependentUpon>XFeedbackList.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XAdmin\XFeedbackList.Master.designer.cs">
+      <DependentUpon>XFeedbackList.Master</DependentUpon>
+    </Compile>
+    <Compile Include="XAdmin\XHome.Master.cs">
+      <DependentUpon>XHome.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XAdmin\XHome.Master.designer.cs">
+      <DependentUpon>XHome.Master</DependentUpon>
+    </Compile>
+    <Compile Include="XAdmin\XLogin.Master.cs">
+      <DependentUpon>XLogin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XAdmin\XLogin.Master.designer.cs">
+      <DependentUpon>XLogin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="XAdmin\XMain.Master.cs">
+      <DependentUpon>XMain.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XAdmin\XMain.Master.designer.cs">
+      <DependentUpon>XMain.Master</DependentUpon>
+    </Compile>
+    <Compile Include="XAdmin\XMemberEdit.Master.cs">
+      <DependentUpon>XMemberEdit.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XAdmin\XMemberEdit.Master.designer.cs">
+      <DependentUpon>XMemberEdit.Master</DependentUpon>
+    </Compile>
+    <Compile Include="XAdmin\XMemberList.Master.cs">
+      <DependentUpon>XMemberList.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XAdmin\XMemberList.Master.designer.cs">
+      <DependentUpon>XMemberList.Master</DependentUpon>
+    </Compile>
+    <Compile Include="XAdmin\XNoticeEdit.Master.cs">
+      <DependentUpon>XNoticeEdit.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XAdmin\XNoticeEdit.Master.designer.cs">
+      <DependentUpon>XNoticeEdit.Master</DependentUpon>
+    </Compile>
+    <Compile Include="XAdmin\XNoticeList.Master.cs">
+      <DependentUpon>XNoticeList.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XAdmin\XNoticeList.Master.designer.cs">
+      <DependentUpon>XNoticeList.Master</DependentUpon>
+    </Compile>
+    <Compile Include="XAPI\VCode.aspx.cs">
+      <DependentUpon>VCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XAPI\VCode.aspx.designer.cs">
+      <DependentUpon>VCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XBase\AdminMaster.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XBase\MemberMaster.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XBase\MyPageItem.cs" />
+    <Compile Include="XBase\PageAccess.cs" />
+    <Compile Include="XMember\XCenter.Master.cs">
+      <DependentUpon>XCenter.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XMember\XCenter.Master.designer.cs">
+      <DependentUpon>XCenter.Master</DependentUpon>
+    </Compile>
+    <Compile Include="XMember\XCenterInfo.Master.cs">
+      <DependentUpon>XCenterInfo.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XMember\XCenterInfo.Master.designer.cs">
+      <DependentUpon>XCenterInfo.Master</DependentUpon>
+    </Compile>
+    <Compile Include="XMember\XCenterPWD.Master.cs">
+      <DependentUpon>XCenterPWD.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XMember\XCenterPWD.Master.designer.cs">
+      <DependentUpon>XCenterPWD.Master</DependentUpon>
+    </Compile>
+    <Compile Include="XMember\XCenterQA.Master.cs">
+      <DependentUpon>XCenterQA.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XMember\XCenterQA.Master.designer.cs">
+      <DependentUpon>XCenterQA.Master</DependentUpon>
+    </Compile>
+    <Compile Include="XMember\XExit.Master.cs">
+      <DependentUpon>XExit.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XMember\XExit.Master.designer.cs">
+      <DependentUpon>XExit.Master</DependentUpon>
+    </Compile>
+    <Compile Include="XMember\XFeedback.Master.cs">
+      <DependentUpon>XFeedback.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XMember\XFeedback.Master.designer.cs">
+      <DependentUpon>XFeedback.Master</DependentUpon>
+    </Compile>
+    <Compile Include="XMember\XForget.Master.cs">
+      <DependentUpon>XForget.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XMember\XForget.Master.designer.cs">
+      <DependentUpon>XForget.Master</DependentUpon>
+    </Compile>
+    <Compile Include="XMember\XFriend.Master.cs">
+      <DependentUpon>XFriend.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XMember\XFriend.Master.designer.cs">
+      <DependentUpon>XFriend.Master</DependentUpon>
+    </Compile>
+    <Compile Include="XMember\XHome.Master.cs">
+      <DependentUpon>XHome.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XMember\XHome.Master.designer.cs">
+      <DependentUpon>XHome.Master</DependentUpon>
+    </Compile>
+    <Compile Include="XMember\XLogin.Master.cs">
+      <DependentUpon>XLogin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XMember\XLogin.Master.designer.cs">
+      <DependentUpon>XLogin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="XMember\XManage.Master.cs">
+      <DependentUpon>XManage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XMember\XManage.Master.designer.cs">
+      <DependentUpon>XManage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="XMember\XNotice.Master.cs">
+      <DependentUpon>XNotice.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XMember\XNotice.Master.designer.cs">
+      <DependentUpon>XNotice.Master</DependentUpon>
+    </Compile>
+    <Compile Include="XMember\XNoticeInfo.Master.cs">
+      <DependentUpon>XNoticeInfo.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XMember\XNoticeInfo.Master.designer.cs">
+      <DependentUpon>XNoticeInfo.Master</DependentUpon>
+    </Compile>
+    <Compile Include="XMember\XQRCode.Master.cs">
+      <DependentUpon>XQRCode.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XMember\XQRCode.Master.designer.cs">
+      <DependentUpon>XQRCode.Master</DependentUpon>
+    </Compile>
+    <Compile Include="XMember\XRegister.Master.cs">
+      <DependentUpon>XRegister.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XMember\XRegister.Master.designer.cs">
+      <DependentUpon>XRegister.Master</DependentUpon>
+    </Compile>
+    <Compile Include="XMember\XReply.Master.cs">
+      <DependentUpon>XReply.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XMember\XReply.Master.designer.cs">
+      <DependentUpon>XReply.Master</DependentUpon>
+    </Compile>
+    <Compile Include="XMember\XReplyInfo.Master.cs">
+      <DependentUpon>XReplyInfo.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XMember\XReplyInfo.Master.designer.cs">
+      <DependentUpon>XReplyInfo.Master</DependentUpon>
+    </Compile>
+    <Compile Include="XMember\XSend.Master.cs">
+      <DependentUpon>XSend.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XMember\XSend.Master.designer.cs">
+      <DependentUpon>XSend.Master</DependentUpon>
+    </Compile>
+    <Compile Include="XMember\XSendInfo.Master.cs">
+      <DependentUpon>XSendInfo.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XMember\XSendInfo.Master.designer.cs">
+      <DependentUpon>XSendInfo.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="XAPI\VCode.aspx" />
+    <Content Include="XMember\XHome.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Hamstc.HYSystem.BLL\Hamstc.HYSystem.BLL.csproj">
+      <Project>{1B513F0D-C39C-4C36-83D7-866F5BCA0D59}</Project>
+      <Name>Hamstc.HYSystem.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hamstc.HYSystem.XCommon\Hamstc.HYSystem.XCommon.csproj">
+      <Project>{2E2048BB-4A67-43B7-A697-5B082180670E}</Project>
+      <Name>Hamstc.HYSystem.XCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hamstc.HYSystem.XModel\Hamstc.HYSystem.XModel.csproj">
+      <Project>{07B4D3F0-02B2-437A-A437-BD330A0B5EA1}</Project>
+      <Name>Hamstc.HYSystem.XModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Res\CSS\imgs\login-bg.psd" />
+    <None Include="Res\MZUI\fonts\zenicon.eot" />
+    <None Include="Res\MZUI\fonts\zenicon.svg" />
+    <None Include="Res\MZUI\fonts\zenicon.ttf" />
+    <None Include="Res\MZUI\fonts\zenicon.woff" />
+    <None Include="Res\ZUI\fonts\zenicon.eot" />
+    <None Include="Res\ZUI\fonts\zenicon.svg" />
+    <None Include="Res\ZUI\fonts\zenicon.ttf" />
+    <None Include="Res\ZUI\fonts\zenicon.woff" />
+    <Content Include="Res\ZUI\lib\kindeditor\plugins.zip" />
+    <None Include="Res\ZUI\lib\kindeditor\README.md" />
+    <Content Include="XAdmin\XMain.Master" />
+    <Content Include="XAdmin\XLogin.Master" />
+    <Content Include="XAdmin\XExit.Master" />
+    <Content Include="XAdmin\XChangePWD.Master" />
+    <Content Include="XAdmin\XNoticeEdit.Master" />
+    <Content Include="XAdmin\XNoticeList.Master" />
+    <Content Include="XMember\XLogin.Master" />
+    <Content Include="XMember\XCenter.Master" />
+    <Content Include="XMember\XExit.Master" />
+    <Content Include="XMember\XFeedback.Master" />
+    <Content Include="XMember\XFriend.Master" />
+    <Content Include="XMember\XNotice.Master" />
+    <Content Include="XMember\XQRCode.Master" />
+    <Content Include="XMember\XReply.Master" />
+    <Content Include="XMember\XSend.Master" />
+    <Content Include="XMember\XNoticeInfo.Master" />
+    <Content Include="XMember\XCenterInfo.Master" />
+    <Content Include="XMember\XCenterPWD.Master" />
+    <Content Include="XMember\XCenterQA.Master" />
+    <Content Include="XMember\XRegister.Master" />
+    <Content Include="XAdmin\XMemberList.Master" />
+    <Content Include="XAdmin\XHome.Master" />
+    <Content Include="XAdmin\XMemberEdit.Master" />
+    <Content Include="XMember\XSendInfo.Master" />
+    <Content Include="XMember\XReplyInfo.Master" />
+    <Content Include="XAdmin\XFeedbackList.Master" />
+    <Content Include="XMember\XManage.Master" />
+    <Content Include="XMember\XForget.Master" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3550</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

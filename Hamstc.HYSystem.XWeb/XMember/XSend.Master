@@ -1,0 +1,77 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="XSend.master.cs" Inherits="Hamstc.HYSystem.XWeb.XMember.XSend" %>
+
+<%@ Register src="../UControl/UCMemberCSS.ascx" tagname="UCMemberCSS" tagprefix="uc1" %>
+<%@ Register src="../UControl/UCMemberJS.ascx" tagname="UCMemberJS" tagprefix="uc2" %>
+<%@ Register src="../UControl/UCMemberHeader.ascx" tagname="UCMemberHeader" tagprefix="uc3" %>
+<%@ Register src="../UControl/UCMemberFooter.ascx" tagname="UCMemberFooter" tagprefix="uc4" %>
+
+<!DOCTYPE html>
+<html>
+<head id="Head1" runat="server">
+    <%--字节码--%>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <%--<meta charset="utf-8" />--%>
+    <%--适配移动端访问--%>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <%--IE渲染内核的选择--%>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>业务联系</title>
+    <uc1:UCMemberCSS ID="UCMemberCSS1" runat="server" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="with-nav-bottom with-heading-top">
+    <form id="form1" runat="server">
+    <%-- 头部--%>
+    <uc3:UCMemberHeader ID="UCMemberHeader1" runat="server" NavTitle="业务联系" />
+    <%-- 正文--%>
+        <div style="background:#EA644A;height:200px;padding-top:40px; color:#FFF;font-size:16px;">
+            <div style="text-align:center;">
+                <div class="avatar avatar-xl circle" style="margin-bottom:20px;"><img src="./Res/CSS/imgs/user-face.png" /></div>
+                <br />
+                <div class="rounded">昵称：<asp:Literal ID="litLoginName" runat="server"></asp:Literal> 
+                &nbsp;&nbsp;&nbsp;&nbsp;当前等级：<asp:Literal ID="litGrade" runat="server"></asp:Literal>级</div>
+                <asp:LinkButton ID="linkbtn1" CssClass="btn circle bordered" runat="server" OnClick="linkbtn1_Click">提交申请</asp:LinkButton>
+            </div>
+        </div>
+        <div>
+            <div class="list width=divider">
+                <div class="item">
+                    <div class="avatar circle">序号</div>
+                    <div class="title">联系对象</div>
+                    <div class="label">状态</div>
+                </div>
+                <asp:Repeater ID="repeater1" runat="server" OnItemCommand="repeater1_ItemCommand" OnItemDataBound="repeater1_ItemDataBound">
+                    <ItemTemplate>
+                        <a class="item" href="./?cmd=member_send_info&id=<%# Eval("MUID")%>">
+                            <div class="avatar grey xxh">1</div>
+                            <div class="title"><asp:Literal ID="litCID" runat="server" Text='<%#Eval("CID")%>'></asp:Literal></div>
+                            <asp:Label ID="litReply" runat="server" Text='<%#Eval("IsReply")%>'></asp:Label>
+                        </a>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
+        
+        </div>
+    <%-- 待完成--%>
+
+    <%-- 底部--%>
+    <uc4:UCMemberFooter ID="UCMemberFooter1" runat="server" />
+   
+    <uc2:UCMemberJS ID="UCMemberJS1" runat="server" />
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+       <script type="text/javascript">
+           $(function () {
+               var count = $(".xxh").size();
+               $(".xxh").each(function () {
+                   $(this).html(count--);
+               });
+           });
+       </script>
+    </form>
+</body>
+</html>

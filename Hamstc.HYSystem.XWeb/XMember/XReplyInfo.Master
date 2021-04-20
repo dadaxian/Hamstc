@@ -1,0 +1,78 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="XReplyInfo.master.cs" Inherits="Hamstc.HYSystem.XWeb.XMember.XReplyInfo" %>
+
+<%@ Register src="../UControl/UCMemberCSS.ascx" tagname="UCMemberCSS" tagprefix="uc1" %>
+<%@ Register src="../UControl/UCMemberJS.ascx" tagname="UCMemberJS" tagprefix="uc2" %>
+<%@ Register src="../UControl/UCMemberHeader.ascx" tagname="UCMemberHeader" tagprefix="uc3" %>
+<%@ Register src="../UControl/UCMemberFooter.ascx" tagname="UCMemberFooter" tagprefix="uc4" %>
+
+<!DOCTYPE html>
+<html>
+<head id="Head1" runat="server">
+    <%--字节码--%>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <%--<meta charset="utf-8" />--%>
+    <%--适配移动端访问--%>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <%--IE渲染内核的选择--%>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>确认对象</title>
+    <uc1:UCMemberCSS ID="UCMemberCSS1" runat="server" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="with-nav-bottom with-heading-top">
+    <form id="form1" runat="server">
+    <%-- 头部--%>
+    <uc3:UCMemberHeader ID="UCMemberHeader1" runat="server" NavTitle="确认对象" />
+    <%--消息提示--%>
+    <asp:PlaceHolder ID="phMsg" runat="server" Visible="false">
+            <div class='layer has-margin has-padding red'><i class='icon-times'></i><asp:Literal ID="litMsg" runat="server"></asp:Literal></div>
+    </asp:PlaceHolder>
+    <%-- 正文--%>
+    <div class="container" >
+    <hr />
+        <div class="control">
+            <label>微信昵称</label>
+            <asp:TextBox ID="txtWXNC" runat="server" ReadOnly="True" CssClass="input" placeholder="微信昵称"></asp:TextBox>
+        </div>
+        <div class="control">
+            <label>微信号</label>
+            <asp:TextBox ID="txtWXH" runat="server" ReadOnly="True" CssClass="input" placeholder="微信号"></asp:TextBox>
+        </div>
+        <div class="control">
+            <label>手机号码</label>
+            <asp:TextBox ID="txtSJHM" runat="server" ReadOnly="True" CssClass="input" placeholder="手机号码"></asp:TextBox>
+        </div>
+        <div class="control">
+            <label>当前等级</label>
+            <asp:TextBox ID="txtGrade1" runat="server" ReadOnly="True" CssClass="input" placeholder="当前等级"></asp:TextBox>
+        </div>
+        <div class="control">
+            <label>下一等级</label>
+            <asp:TextBox ID="txtGrade2" runat="server" ReadOnly="True" CssClass="input" placeholder="当前等级"></asp:TextBox>
+        </div>
+         <asp:PlaceHolder ID="PlaceHolder1" runat="server" >
+             <div class="control">
+               <div class="checkbox">
+                   <asp:CheckBox ID="checkbox1"  runat="server" Text="同意"/>
+               </div>
+            </div>
+             <div class="control">
+               <asp:Button ID="btn_comfirm" runat="server" Text="确认提交" CssClass="btn red" Width="100%"
+                    OnClientClick="return confirm('确认提交?');"
+                    OnClick="btn_comfirm_Click"/>
+            </div>
+         </asp:PlaceHolder>
+    </div>
+    <%-- 底部--%>
+    <uc4:UCMemberFooter ID="UCMemberFooter1" runat="server" />
+   
+    <uc2:UCMemberJS ID="UCMemberJS1" runat="server" />
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

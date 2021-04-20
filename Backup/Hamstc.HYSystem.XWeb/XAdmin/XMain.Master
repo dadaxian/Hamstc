@@ -1,0 +1,127 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="XMain.Master.cs" Inherits="Hamstc.HYSystem.XWeb.XAdmin.XAdmin" %>
+
+<%@ Register src="../UControl/UCAdminCSS.ascx" tagname="UCAdminCSS" tagprefix="uc1" %>
+<%@ Register src="../UControl/UCAdminJS.ascx" tagname="UCAdminJS" tagprefix="uc2" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>会员管理系统</title>
+    <uc1:UCAdminCSS ID="UCAdminCSS1" runat="server" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="main-top">
+            <a class="icon-menu"></a>
+            <div id="main-nav" class="main-nav">
+         
+            </div>
+            <div class="nav-right">
+              <div class="info">
+                <i></i>
+                <span style="line-height:30px;">
+                  您好，<asp:Literal ID="litName" runat="server"></asp:Literal>    
+                </span>
+              </div>
+              <div class="option">
+                <i></i>
+                <div class="drop-wrap">
+                  <div class="arrow"></div>
+                  <ul class="item"> 
+                    <li>
+                        <a href="./?cmd=admin_home" target="mainframe">管理中心</a>
+                    </li>                        
+                    <li>
+                        <a href="./?cmd=admin_changepwd" target="mainframe">修改密码</a>
+                    </li>
+                    <li>
+                        <a href="javascript:" onclick="return doExit();" target="mainframe">注销退出</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+        </div>  
+        <div class="main-left">
+        <h1 class="logo2"></h1>
+        <div id="sidebar-nav" class="sidebar-nav">
+            <asp:PlaceHolder ID="PlaceHolder1" runat="server">
+                <div class="list-group" style="display:none ;">
+                    <h1 title="管理中心"><img src="./Res/CSS/imgs/nav/home.png" /></h1>
+                    <div class="list-wrap">
+                        <h2>管理中心<i></i></h2>
+                        <ul>
+                            <li>
+                                <a><span>会员管理</span></a>
+                                <ul>
+                                    <li>
+                                        <a href="./?cmd=admin_member" target="mainframe"><span>会员信息列表</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a><span>公告管理</span></a>
+                                <ul>
+                                    <li>
+                                        <a href="./?cmd=admin_notice" target="mainframe"><span>公告信息列表</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a><span>留言管理</span></a>
+                                <ul>
+                                    <li>
+                                        <a href="./?cmd=admin_feedback" target="mainframe"><span>留言信息列表</span></a>
+                                    </li>
+                                </ul>
+                            </li> 
+                        </ul>
+                    </div>
+                </div>
+            </asp:PlaceHolder>   
+                <div class="list-group" style="display: none;">
+                    <h1 title="个人中心"><img src="./Res/CSS/imgs/nav/user.png" /></h1>
+                    <div class="list-wrap">
+                        <h2>个人中心<i></i></h2>
+                        <ul>                        
+                            <li>
+                                <a href="./?cmd=admin_changepwd" target="mainframe"><span>修改密码</span></a>
+                            </li>
+                            <li>
+                                <a href="javascript:" onclick="return doExit();" target="mainframe"><span>注销退出</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>       
+        </div>    
+      </div>  
+        <div class="main-container"> 
+            <iframe id="mainframe" name="mainframe" frameborder="0" src="./?cmd=admin_home"></iframe>    
+        </div>         
+        <uc2:UCAdminJS ID="UCAdminJS1" runat="server" />    
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"> 
+            </asp:ContentPlaceHolder>
+        </div>
+        <script type="text/javascript" charset="utf-8">
+            function doExit() {
+                parent.dialog({
+                    title: '提示',
+                    content: '<div style=\'width:200px\'>您确定注销退出？</div>',
+                    okValue: '确定',
+                    ok: function () {
+                        window.location = "./?cmd=admin_exit";
+                    },
+                    cancelValue: '取消',
+                    cancel: function () { }
+                }).showModal();
+                return false;
+            }
+        
+    </script>     
+    </form>
+</body>
+</html>
